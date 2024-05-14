@@ -1,0 +1,16 @@
+<p-fieldset>
+  <ng-template pTemplate="header">
+    <span>
+      <img [src]="pokemon.sprites.front_default">
+      {{pokemon.name | titlecase}}
+      <img [src]="pokemon.sprites.back_default">
+    </span>
+  </ng-template>
+
+  <p>
+    Poids : {{pokemon.weight / 10}} <br />
+    Taille : {{pokemon.height / 10}}
+  </p>
+  <hr />
+  <img [src]="pokemon.sprites.other['official-artwork'].front_default" width="200px">
+</p-fieldset>

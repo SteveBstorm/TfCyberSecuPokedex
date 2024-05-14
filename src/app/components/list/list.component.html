@@ -1,0 +1,27 @@
+<h3>Mon super pokedex</h3>
+<button pButton
+        size="small"
+        label="Précédent"
+        *ngIf="pokedex.previous"
+        (click)="loadPokedex(pokedex.previous)"
+        ></button>
+<button pButton
+        size="small"
+        label="Suivant"
+        *ngIf="pokedex.next"
+        (click)="loadPokedex(pokedex.next)"
+        ></button>
+<p-table [value]="pokedex.results">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Nom du pokémon</th>
+      <th>Actions</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-pokemon>
+    <tr>
+      <td>{{pokemon.name}}</td>
+      <td><button pButton label="Détails" (click)="detail(pokemon.url)"></button></td>
+    </tr>
+  </ng-template>
+</p-table>
